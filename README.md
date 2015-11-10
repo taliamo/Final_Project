@@ -1,6 +1,6 @@
 # CO2 and Pitch Change of a Pipe Organ
-# T. Martz-Oberlander, 2011-11-08
-# Readme file for my final project root repository
+### T. Martz-Oberlander, 2011-11-08
+### Readme file for my final project root repository
 
 How is the pitch of a pipe organ affected by change in CO2 concentration? This project computes pitch and CO2 data to look at the change in the speed of sound from a pipe organ as CO2 concentration (ppm) changes in a chapel in New Hampshire, USA.
 
