@@ -20,7 +20,9 @@ This computational project is conducted as so:
 
 5) Statistically analyze the CO2/sound relationship. I will look for correlation relationships in a non-normal dataset; as seen in "Analyzing_Data.ipynb" in the "Scripts" directory.
 
-6) Create appendices for the data. I will also have cleanly organized datasets that can be included in appendices for further analysis at a later date.
+6) Store the different dataframes I created in a "data" directory for later use, and/or to include appendices of raw data in publications.
+
+Current issues: I have created a unified script for my project called "main_script.ipynb" in the "Scripts" directory in "organ_pitch". I have a few issues, particularly with selecting out the date value I want (I tried using regular expressions). Any help with that would be appreciated. I need to select out that date for both datafiles (pitch and environmental data). 
 
 
 
