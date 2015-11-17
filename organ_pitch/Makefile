@@ -10,6 +10,8 @@
 
 #clean (Delete files made)
 
-
+clean :
+	pitch.csv
+	#fig 
 
 
