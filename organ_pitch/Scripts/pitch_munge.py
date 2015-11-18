@@ -23,10 +23,10 @@ def main():
 	pitch['time']= pd.to_datetime(pitch['time'])
 
 #create new column for median frequency from 9 frequency measurements
-	pitch['median_freq'] = np.mean(pitch[['freq1','freq2','freq3', 'freq4', 'freq5', 'freq6', 'freq7', 'freq8', 'freq9']], axis=1)	
+	pitch['mean_freq'] = np.mean(pitch[['freq1','freq2','freq3', 'freq4', 'freq5', 'freq6', 'freq7', 'freq8', 'freq9']], axis=1)	
 
 #do the same for standard deviation
-	pitch['stdev_freq'] = np.std(pitch['median_freq'])
+	pitch['stdev_freq'] = np.std(pitch['mean_freq'])
 
 #select rows of the pitch dataframe for single div's (sections) of the chapel
 	organized_pitch = pitch.groupby(['div']).get_group('choir')
@@ -40,12 +40,15 @@ def make_plot(data):
 	plt.figure(figsize=(8,5))
 
         #Select data
-	fig = plt.plot(organized_pitch['time'], organized_pitch['median_freq'], color = 'navy') 
+	fig = plt.plot(organized_pitch['time'], organized_pitch['mean_freq'], color = 'navy') 
 
         #Make title and labels for plot
 	plt.title('Pitch of C5 Pipe Organ Note')
 	plt.ylabel('Sound Frequency (Hz)')
 	plt.xlabel('Time of Sample Taken (Apr. 13, 16, and 17, 2010)') 	
+
+	#Save the figure
+	plt.savefig(output_pitch_fig)
 
         #Close visualization function
 	return()
@@ -54,7 +57,7 @@ def make_plot(data):
 	make_plot(organized_pitch)
 
 #Save the figure to the 3rd argument
-plt.savefig(output_pitch_fig)
+#plt.savefig(output_pitch_fig)
 
 #close main function
 main()

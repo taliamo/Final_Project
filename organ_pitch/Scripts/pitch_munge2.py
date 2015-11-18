@@ -17,13 +17,13 @@ output_pitch_fig = sys.argv[3]
 def main():
 
 #import pitch data file
-	pitch=pd.read_table(input_filename, sep=',')
+	pitch = pd.read_table(input_filename, sep=',')
 
 #use date/time timestamp values
-	pitch['time']= pd.to_datetime(pitch['time'])
+	pitch['time'] = pd.to_datetime(pitch['time'])
 
 #create new column for mean frequency from 9 frequency measurements
-	pitch['median_freq'] = np.mean(pitch[['freq1','freq2','freq3', 'freq4', 'freq5', 'freq6', 'freq7', 'freq8', 'freq9']], axis=1)
+	pitch['mean_freq'] = np.mean(pitch[['freq1','freq2','freq3', 'freq4', 'freq5', 'freq6', 'freq7', 'freq8', 'freq9']], axis=1)
 
 #Test to see if data is a float, and useable in a plot
 
@@ -35,7 +35,8 @@ def test_data_type(data):
     assert obs == 'float64', 'Data is not a float'
     return
 
-test_data_type(pitch['div'])
+#Call the test function on the 'freq5' column in the 'pitch' dataframe
+test_data_type(pitch['freq5'])
 
 #do the same for standard deviation
 pitch['stdev_freq'] = np.std(pitch['median_freq'])
@@ -53,7 +54,7 @@ def make_plot(data):
 	plt.figure(figsize=(8,5))
 
 	#Select data
-	fig = plt.plot(organized_pitch['time'], organized_pitch['median_freq'], color = 'navy')
+	fig = plt.plot(organized_pitch['time'], organized_pitch['mean_freq'], color = 'navy')
 
 	#Make title and labels for plot
 	plt.title('Pitch of C5 Pipe Organ Note')
