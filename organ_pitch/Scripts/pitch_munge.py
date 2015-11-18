@@ -1,6 +1,6 @@
 #T. Martz-Oberlander, 2015-11-15
 #Script for wrangling pitch data into a dataframe with media and standard dev. of sound frequencies
-# To call this script: $ python Scripts/pitch_data.py Data/[input_filename] Data/[output_pitch_dataframe_name] 
+# To call this script: $ python Scripts/pitch_munge.py Data/[input_filename] Data/[output_pitch_dataframe_name] 
 
 #Import useful libraries
 import pandas as pd
