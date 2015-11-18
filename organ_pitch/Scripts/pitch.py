@@ -22,6 +22,17 @@ def main():
 #use date/time timestamp values
 	pitch['time']= pd.to_datetime(pitch['time'])
 
+#Test to make sure imported data columns are floats, not objects or strings
+	def test_data_type(data):
+		'''Check to see if a column contains only floats'''
+		obs = pitch['freq7'].dtype #I pass the dtype checking function through my test function
+		exp = 'float64'
+		assert obs == 'float64', 'Data is not a float'
+		return
+
+#Run the test function on the 'freq4' column of the pitch dataset
+	test_data_type(pitch['freq4'])
+
 #create new column for mean frequency from 9 frequency measurements
 	pitch['mean_freq'] = np.mean(pitch[['freq1','freq2','freq3', 'freq4', 'freq5', 'freq6', 'freq7', 'freq8', 'freq9']], axis=1)	
 
