@@ -22,6 +22,6 @@ This computational project is conducted as so:
 
 6) Store the different dataframes I created in a "data" directory for later use, and/or to include appendices of raw data in publications.
 
-Current issues: I am stuck with the equation from Cramer for sound frequency from CO2 (partial equation, not including humidity or temp). I am trying to define a function from the equation (in the "upload_env_data.ipynb" script), to run a loop through each row of my "env" data frame. Any help on writing the loop and/r the function would be helpful.
+All needed scripts can be run with the Makefile, located in the main directory "organ_pitch"
 
  

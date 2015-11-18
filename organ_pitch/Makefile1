@@ -1,0 +1,22 @@
+#T. Martz-Oberlander, 2015-11-13
+##Makefile for organ pitch project
+##Runs pitch munger, environmental munger, and plot maker scripts; cleans directory
+
+# all : Scripts/munge_pitch.py Scripts/env_data.py Data/pitches.csv 
+
+#Pitch munging
+Data/munged_pitch.csv : Data/pitches.csv
+	python Data/pitches.csv Data/munged_pitch.csv
+
+#Environmental data munging and visualization
+Figures/fig.pdf : Data/CO2_May.csv Data/munged_pitch.csv 
+	python Data/CO2_May.csv Data/munged_pitch.csv
+
+
+#clean (Delete files made)
+.PHONY : clean
+clean :
+	rm -f organ_pitch/Figures/*.pdf
+	rm -f organ_pitch/Data/munged_pitch.csv
+
+

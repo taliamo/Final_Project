@@ -1,17 +1,19 @@
 #T. Martz-Oberlander, 2015-11-13
-#Makefile for organ pitch project
+##Makefile for organ pitch project
+##Runs pitch munger, environmental munger, and plot maker scripts; cleans directory
 
-# all : [files]
+# all : Scripts/pitch_munge2.py  Data/pitches.csv
 
-#upload_pitch_data.py #to wrangle pitch datafiles 
-#upload_env_data.py #to warngle environmental datafiles
+#Pitch munging
+Data/munged_pitch2.csv : Data/pitches.csv
+        python Data/pitches.csv Data/munged_pitch.csv
 
-# make figure, save figure
-
-#clean (Delete files made)
-
+#clean (Delete .pdf figures, and numbered munged_pitch.csv files made previously)
+.PHONY : clean
 clean :
-	pitch.csv
-	#fig 
+        rm -f organ_pitch/Figures/*.pdf
+        rm -f organ_pitch/Data/*munged_pitch.csv
+
+
 
 
