@@ -16,6 +16,5 @@ This computational project is conducted as to:
 
 3) Visualize the change in measured pitch over time;
 
-This is run using the organ_pitch/driver.sh file for the organ_pitch/Scripts/munge_pitch2.py script. 
-
+This is run using the organ_pitch/driver.sh file for the organ_pitch/Scripts/pitch.py script. Output files (new measured pitch .csv dataframe and plotted pitch) are saved in organ_pitch/Data and organ_pitch/Figures, respectively. 
 

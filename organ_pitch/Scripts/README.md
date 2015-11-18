@@ -1,25 +1,18 @@
 # T. Martz-Oberlander, 2015-11-08
-# Scripts information
-# All script files for the organ pitch project are stored 
-#in this "Scripts" repository.
+## Scripts information
+All script files for the organ pitch project are stored 
+in this "Scripts" repository.
 
 Scripts contain code for:
-Uploading data;
+uploading data, creating new dataframes, testing data type, plotting and saving figures of measured pitch. 
 
-Sorting and rearranging data ("pitch_munge.py" and "env_data.py");
+env.py
+env_data.py
+pitch_munge.py
+pitch_munge2.py 
 
-Finding mean values and standard deviation for musical note frequency (same as above);
+are all iterations of this project's script which are non functional.
 
-Visualizing data ( "env_data.py");
-
-Running statistical tests on data ("stats_compare.py");
-
-There is a Makefile while acts as a driver script to run the other scripts. It includes a "make clean" command, which can reset the directories for the scripts to be re-run. 
-
-The commands for the first script, "pitch_munge.py" are: $ python Scripts/pitch_data.py Data/[input_filename] Data/[output_pitch_dataframe_name]
-
-The commands for the second script, "env_data.py" are: $ python Scripts/env_data.py Data/[input filename] Figures/[output plot name] 
-
-To run through the entire project, use the Makefile.
+pitch.py is the working script. It can be run by entering " $ bash driver.sh $1 $2 $3" in the command line, where the arguments are: input pitch data file, output pitch dataframe (grouped by location with mean and standard deviation of frequency), and output figure name. Provide directory locations to save the .csv and .pdf files in their appropriate locations (Data and Figures, respectively). Also invlude .csv and .pdf file types at the end of the name for ease of documentation later.
 
 
